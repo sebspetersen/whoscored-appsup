@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whoscored – Support</title>
+    <style>
+      :root {
+        --primary: #007aff;
+        --text: #1c1c1e;
+        --bg: #f2f2f7;
+        --surface: #ffffff;
+        --radius: 12px;
+        --space: 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+      }
+      header {
+        background: var(--surface);
+        padding: calc(var(--space) * 2) var(--space);
+        text-align: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+      header img {
+        height: 72px;
+        width: 72px;
+        border-radius: 20%;
+        margin-bottom: var(--space);
+      }
+      h1 {
+        font-size: 1.875rem;
+        margin: 0;
+      }
+      main {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: calc(var(--space) * 3) var(--space);
+      }
+      section {
+        margin-bottom: calc(var(--space) * 3);
+        background: var(--surface);
+        padding: calc(var(--space) * 2);
+        border-radius: var(--radius);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      }
+      h2 {
+        font-size: 1.25rem;
+        margin-top: 0;
+      }
+      a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+      footer {
+        text-align: center;
+        padding: var(--space);
+        font-size: 0.875rem;
+        color: #6e6e73;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Optional: Add your app icon URL below. Delete this <img> if unused. -->
+      <!-- <img src="" alt="Whoscored icon" /> -->
+      <h1>Whoscored Support</h1>
+      <p>Version 1.0</p>
+    </header>
+    <main>
+      <section>
+        <h2>Contact Us</h2>
+        <p>
+          Need help or have feedback? Email us at
+          <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>FAQ</h2>
+        <ul>
+          <li><strong>Coming soon —</strong> We’re collecting the most common questions and will post answers here shortly.</li>
+        </ul>
+      </section>
+
+      <section id="privacy-policy">
+        <h2>Privacy Policy</h2>
+        <p>Last updated: April 21, 2025</p>
+        <p>
+          Whoscored ("the App") is published by Knolden Ventures ("we", "our",
+          "us"). Your privacy is important to us. This policy explains what data
+          the App collects, how we use it, and your rights.
+        </p>
+        <h3>1. Data We Do <strong>Not</strong> Collect</h3>
+        <ul>
+          <li>No personal information such as name, address, or phone number.</li>
+          <li>No location data.</li>
+          <li>No contacts or photos.</li>
+        </ul>
+        <h3>2. Data We Collect</h3>
+        <p>
+          The App only collects anonymous, aggregated usage statistics (e.g.,
+          screen views, crash reports) through Apple‑provided services to help us
+          improve stability and performance.
+        </p>
+        <h3>3. How We Use Data</h3>
+        <p>
+          Aggregated analytics help us understand which features are most
+          popular and where improvements are needed. We do not use collected
+          data for advertising or share it with third‑parties.
+        </p>
+        <h3>4. Support Communications</h3>
+        <p>
+          If you email
+          <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a>,
+          the message will include your email address and any information you
+          voluntarily provide. We will use this solely to address your enquiry
+          and improve customer support.
+        </p>
+        <h3>5. Data Retention</h3>
+        <p>
+          Usage statistics are retained in aggregate form for up to 24 months.
+          Support emails are retained for as long as necessary to resolve your
+          request.
+        </p>
+        <h3>6. Your Rights</h3>
+        <p>
+          You may request deletion of any support emails you have sent by
+          contacting us at the address above.
+        </p>
+        <h3>7. Changes to This Policy</h3>
+        <p>
+          We may update this policy. Significant changes will be noted on this
+          page and, where appropriate, in‑app.
+        </p>
+        <p>
+          For questions about privacy, please email
+          <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a>.
+        </p>
+      </section>
+    </main>
+    <footer>
+      &copy; <span id="year"></span> Whoscored. All rights reserved.
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
