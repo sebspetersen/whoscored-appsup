@@ -1,360 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Whoscored – Support</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whoscored – Support</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Google Font for a modern look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-HL6KJRxvRX4geGCEuT7WBvUuU25NsyZ41Texe+RsHV8A+DJvQb6DZLG2fXU+1F0DFA+gk6w3G5bE1b0GI6pWlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-      /* -----------------------------
-         Variables & Base
-      ----------------------------- */
-      :root {
-        /* Colors */
-        --gradient-start: #0f2027;
-        --gradient-mid: #203a43;
-        --gradient-end: #2c5364;
-        --accent: #ff8c00;
-        --text-dark: #f4f4f4;
-        --text-body: #1c1c1e;
-        --card-bg: rgba(255, 255, 255, 0.8);
-        --shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-        /* Sizing */
-        --radius: 20px;
-        --gap: 1.25rem;
-      }
+  <style>
+    /* ─────────── CSS RESET ─────────── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;line-height:1.6;min-height:100vh;color:var(--c-text);background:var(--c-bg);transition:background .4s,color .4s;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:var(--c-accent);text-decoration:none;position:relative}
+    a::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:2px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .3s}
+    a:hover::after{transform:scaleX(1);transform-origin:left}
+    h1,h2,h3,h4{font-weight:700;line-height:1.2;color:var(--c-heading)}
+    img{max-width:100%;height:auto;display:block}
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+    /* ─────────── THEME VARIABLES ─────────── */
+    :root{
+      --c-bg:#fdfdfd;
+      --c-bg-hero:radial-gradient(ellipse at 75% 25%,#ffb347 0%,#ffcc33 15%,#ff5f6d 55%,#ffc371 100%);
+      --c-card:rgba(255,255,255,0.75);
+      --c-heading:#0f2027;
+      --c-text:#1c1c1e;
+      --c-accent:#ff8c00;
+      --c-shadow:0 12px 28px rgba(0,0,0,.15);
+    }
+    .dark{
+      --c-bg:#0f2027;
+      --c-bg-hero:radial-gradient(circle at 30% 70%,#203a43 0%,#141E30 50%,#0f0c29 100%);
+      --c-card:rgba(28,28,30,0.6);
+      --c-heading:#f4f4f4;
+      --c-text:#d0d0d0;
+      --c-accent:#ffb347;
+      --c-shadow:0 12px 24px rgba(0,0,0,.55);
+    }
 
-      html {
-        scroll-behavior: smooth;
-      }
+    /* ─────────── NAV ─────────── */
+    nav{position:fixed;top:0;left:0;width:100%;padding:.75rem 1.25rem;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.35);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);box-shadow:0 4px 12px rgba(0,0,0,.05);z-index:50;transition:background .4s}
+    .dark nav{background:rgba(15,32,39,.55)}
+    .nav-links{display:flex;gap:1.25rem;font-weight:600;font-size:.95rem}
+    .nav-links a.active{color:var(--c-heading)}
+    #themeToggle{cursor:pointer;font-size:1.25rem;color:var(--c-heading);background:none;border:none;transition:transform .3s}
+    #themeToggle:hover{transform:rotate(20deg)}
 
-      body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-          sans-serif;
-        color: var(--text-body);
-        background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
+    /* ─────────── HERO ─────────── */
+    header{min-height:70vh;display:grid;place-content:center;text-align:center;background:var(--c-bg-hero);position:relative;overflow:hidden;color:var(--c-heading)}
+    header h1{font-size:clamp(2.5rem,5vw,4rem);margin-bottom:.5rem}
+    header p{font-size:1.1rem;opacity:.9}
+    .stars, .stars::after{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='4' height='4' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23ffffff'/%3E%3C/svg%3E") repeat;animation:moveStars 50s linear infinite;opacity:.25}
+    .stars::after{content:"";animation-duration:100s}
+    @keyframes moveStars{from{background-position:0 0}to{background-position:-10000px 5000px}}
+    .wave{position:absolute;bottom:0;left:0;width:200%;height:150px;background:url('data:image/svg+xml,%3Csvg viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0,100 C150,200 350,0 600,100 C850,200 1050,0 1200,100 L1200,200 L0,200 Z" fill='%23ffffff'/%3E%3C/svg%3E') repeat-x;background-size:50% 100%;transform:translateX(-25%);animation:wave 45s linear infinite;opacity:.8}
+    @keyframes wave{from{transform:translateX(-25%)}to{transform:translateX(-50%)}}
 
-      a {
-        color: var(--accent);
-        text-decoration: none;
-        position: relative;
-        transition: color 0.3s ease;
-      }
+    /* ─────────── MAIN LAYOUT ─────────── */
+    main{max-width:960px;margin-inline:auto;padding:5rem 1.25rem 4rem;display:grid;gap:3rem;grid-template-columns:1fr}
+    section{background:var(--c-card);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-radius:24px;padding:2.25rem 2rem;box-shadow:var(--c-shadow);position:relative;overflow:hidden}
+    section::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,transparent 0%,var(--c-accent) 50%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+    section h2{font-size:1.65rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.8px;display:flex;align-items:center;gap:.5rem}
+    section h2 i{font-size:1.25rem;color:var(--c-accent)}
 
-      a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        height: 2px;
-        width: 100%;
-        background: var(--accent);
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: transform 0.3s ease;
-      }
+    /* ─────────── FAQ ACCORDION ─────────── */
+    .accordion-item+ .accordion-item{margin-top:1rem}
+    .accordion-question{font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .accordion-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,color .4s ease}
+    .accordion-answer p{padding-top:.5rem}
+    .accordion-item.active .accordion-answer{max-height:400px}
 
-      a:hover {
-        color: var(--text-body);
-      }
+    /* ─────────── FOOTER ─────────── */
+    footer{text-align:center;padding:2rem 1rem;font-size:.9rem;color:var(--c-text);opacity:.8}
 
-      a:hover::after {
-        transform: scaleX(1);
-        transform-origin: left;
-      }
+    /* ─────────── SCROLL REVEAL ─────────── */
+    [data-sr]{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.19,1,.22,1),transform .8s cubic-bezier(.19,1,.22,1)}
+    [data-sr].visible{opacity:1;transform:none}
 
-      /* -----------------------------
-         Header Hero
-      ----------------------------- */
-      header {
-        background: linear-gradient(-45deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
-        background-size: 400% 400%;
-        animation: heroGradient 15s ease infinite;
-        color: var(--text-dark);
-        text-align: center;
-        padding: 6rem 1.5rem 4rem;
-        position: relative;
-        overflow: hidden;
-      }
+    /* ─────────── MEDIA ─────────── */
+    @media(min-width:720px){main{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+  <!-- ─────────── NAV ─────────── -->
+  <nav>
+    <a href="#top" class="logo" aria-label="Whoscored home" style="font-weight:700;font-size:1.15rem">Whoscored</a>
+    <div class="nav-links">
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQ</a>
+      <a href="#privacy">Privacy</a>
+      <button id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-circle-half-stroke"></i></button>
+    </div>
+  </nav>
 
-      @keyframes heroGradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
+  <!-- ─────────── HERO ─────────── -->
+  <header id="top">
+    <div class="stars"></div>
+    <h1 data-sr>Need a hand?</h1>
+    <p data-sr style="transition-delay:.15s">Welcome to the Whoscored support hub &#x1F44B;</p>
+    <p data-sr style="opacity:.9;font-size:.9rem;transition-delay:.3s">Version 1.0 • First release ever</p>
+    <div class="wave"></div>
+  </header>
 
-      header h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        font-weight: 700;
-        margin-bottom: 0.75rem;
-      }
+  <!-- ─────────── MAIN ─────────── -->
+  <main>
+    <!-- CONTACT -->
+    <section id="contact" data-sr>
+      <h2><i class="fa-solid fa-envelope"></i> Contact Us</h2>
+      <p>We're here for you! Email us at <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a> or use the form below.</p>
+      <form action="https://formspree.io/f/xyyrorez" method="POST" style="margin-top:1.5rem;display:grid;gap:1rem">
+        <input type="email" name="email" required placeholder="Your Email" style="padding:.85rem 1rem;border-radius:12px;border:none;font-family:inherit;background:rgba(0,0,0,.05)">
+        <textarea name="message" rows="4" required placeholder="How can we help?" style="padding:.85rem 1rem;border-radius:12px;border:none;font-family:inherit;background:rgba(0,0,0,.05)"></textarea>
+        <button type="submit" style="padding:.85rem 1rem;border:none;border-radius:12px;font-weight:600;font-size:1rem;background:var(--c-accent);color:#fff;cursor:pointer;filter:drop-shadow(0 4px 12px rgba(0,0,0,.15));transition:transform .25s"><i class="fa-solid fa-paper-plane" style="margin-right:.35rem"></i>Send Message</button>
+      </form>
+    </section>
 
-      header p {
-        font-size: 1.125rem;
-        opacity: 0.9;
-        letter-spacing: 0.5px;
-      }
+    <!-- FAQ -->
+    <section id="faq" data-sr>
+      <h2><i class="fa-solid fa-circle-question"></i> FAQ</h2>
+      <div class="accordion-item" data-accordion>
+        <div class="accordion-question">When is the next feature update? <i class="fa-solid fa-chevron-down"></i></div>
+        <div class="accordion-answer"><p>We're already hard at work! Follow our social channels for progress updates.</p></div>
+      </div>
+      <div class="accordion-item" data-accordion>
+        <div class="accordion-question">How can I suggest a feature? <i class="fa-solid fa-chevron-down"></i></div>
+        <div class="accordion-answer"><p>Send an email with the subject line <em>Feature Request</em> and we'll add it to our roadmap discussion.</p></div>
+      </div>
+    </section>
 
-      /* Decorative floating shapes */
-      .shape {
-        position: absolute;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 50%;
-        filter: blur(6px);
-        animation: float 10s ease-in-out infinite;
-      }
+    <!-- PRIVACY POLICY -->
+    <section id="privacy" data-sr>
+      <h2><i class="fa-solid fa-user-shield"></i> Privacy Policy</h2>
+      <p style="font-weight:600;margin-bottom:.5rem">Last updated: April 21, 2025</p>
+      <p>Whoscored ("the App") is published by Knolden Ventures ("we", "our", "us"). Your privacy is important to us. This policy explains what data we collect, how we use it, and your rights.</p>
+      <h3 style="margin-top:1.35rem">1. Data We Do <strong>Not</strong> Collect</h3>
+      <ul style="margin-left:1.25rem;margin-top:.5rem">
+        <li>No personal information such as name, address, or phone number.</li>
+        <li>No location data.</li>
+        <li>No contacts or photos.</li>
+      </ul>
+      <h3 style="margin-top:1.35rem">2. Data We Collect</h3>
+      <p>The App only collects anonymous, aggregated usage statistics (e.g., screen views, crash reports) through Apple‑provided services to help us improve stability and performance.</p>
+      <h3 style="margin-top:1.35rem">3. How We Use Data</h3>
+      <p>Aggregated analytics help us understand which features are most popular and where improvements are needed. We do not use collected data for advertising or share it with third‑parties.</p>
+      <h3 style="margin-top:1.35rem">4. Support Communications</h3>
+      <p>If you email <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a>, the message will include your email address and any information you voluntarily provide. We use this solely to address your enquiry and improve customer support.</p>
+      <h3 style="margin-top:1.35rem">5. Data Retention</h3>
+      <p>Usage statistics are retained in aggregate form for up to 24 months. Support emails are retained for as long as necessary to resolve your request.</p>
+      <h3 style="margin-top:1.35rem">6. Your Rights</h3>
+      <p>You may request deletion of any support emails you have sent by contacting us at the address above.</p>
+      <h3 style="margin-top:1.35rem">7. Changes to This Policy</h3>
+      <p>We may update this policy. Significant changes will be noted on this page and, where appropriate, in‑app.</p>
+      <p style="margin-top:1rem">For questions about privacy, please email <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a>.</p>
+    </section>
+  </main>
 
-      .shape:nth-child(1) {
-        width: 160px;
-        height: 160px;
-        left: 10%;
-        top: 20%;
-      }
+  <!-- ─────────── FOOTER ─────────── -->
+  <footer>
+    © <span id="year"></span> Whoscored. All rights reserved.
+  </footer>
 
-      .shape:nth-child(2) {
-        width: 100px;
-        height: 100px;
-        right: 12%;
-        top: 35%;
-        animation-delay: -3s;
-      }
+  <!-- ─────────── SCRIPTS ─────────── -->
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent=new Date().getFullYear();
 
-      .shape:nth-child(3) {
-        width: 120px;
-        height: 120px;
-        left: 50%;
-        top: 70%;
-        animation-delay: -6s;
-      }
+    // Theme toggle
+    const root=document.documentElement;const btn=document.getElementById('themeToggle');
+    function applyTheme(dark){root.classList.toggle('dark',dark);localStorage.setItem('theme',dark?'dark':'light');}
+    const stored=localStorage.getItem('theme');applyTheme(stored?stored==='dark':matchMedia('(prefers-color-scheme: dark)').matches);
+    btn.addEventListener('click',()=>applyTheme(!root.classList.contains('dark')));
 
-      @keyframes float {
-        0%, 100% {
-          transform: translateY(0) translateX(0);
-        }
-        50% {
-          transform: translateY(-30px) translateX(20px);
-        }
-      }
+    // Accordion
+    document.querySelectorAll('[data-accordion]').forEach(item=>{
+      const question=item.querySelector('.accordion-question');
+      question.addEventListener('click',()=>item.classList.toggle('active'));});
 
-      /* -----------------------------
-         Main Layout
-      ----------------------------- */
-      main {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: calc(var(--gap) * 2);
-        padding: 3.5rem 1.25rem 5rem;
-        max-width: 900px;
-        width: 100%;
-        margin: 0 auto;
-      }
+    // Scroll reveal
+    const srEls=[...document.querySelectorAll('[data-sr]')];
+    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.2});
+    srEls.forEach(el=>observer.observe(el));
 
-      section {
-        width: 100%;
-        background: var(--card-bg);
-        backdrop-filter: blur(12px) saturate(120%);
-        -webkit-backdrop-filter: blur(12px) saturate(120%);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 2rem 1.75rem;
-        animation: fadeUp 0.8s ease both;
-      }
-
-      section:nth-of-type(2) {
-        animation-delay: 0.15s;
-      }
-      section:nth-of-type(3) {
-        animation-delay: 0.3s;
-      }
-
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      h2 {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: var(--gap);
-        color: var(--gradient-mid);
-      }
-
-      ul {
-        list-style: none;
-        display: grid;
-        gap: var(--gap);
-      }
-
-      li {
-        line-height: 1.6;
-      }
-
-      /* -----------------------------
-         Footer
-      ----------------------------- */
-      footer {
-        text-align: center;
-        padding: 2rem 1rem;
-        font-size: 0.9rem;
-        color: #6e6e73;
-      }
-
-      /* Responsive Tweaks */
-      @media (min-width: 768px) {
-        header {
-          padding: 8rem 2rem 5rem;
-        }
-        main {
-          padding: 4.5rem 2rem 6rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <!-- Optional icon - uncomment and provide source if available -->
-      <!-- <img src="" alt="Whoscored icon" style="height:96px;width:96px;border-radius:24px;margin-bottom:1.5rem;"> -->
-      <h1>Whoscored Support</h1>
-      <p>Version 1.0 • First release ever</p>
-      <!-- Decorative floating shapes -->
-      <span class="shape"></span>
-      <span class="shape"></span>
-      <span class="shape"></span>
-    </header>
-
-    <main>
-      <!--  Contact  -->
-      <section id="contact">
-        <h2>Need Help?</h2>
-        <p>
-          We're here for you! Send us an email at
-          <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a>
-          and we'll get back to you as quickly as possible.
-        </p>
-      </section>
-
-      <!--  FAQ  -->
-      <section id="faq">
-        <h2>Frequently Asked Questions</h2>
-        <ul>
-          <li>
-            <strong>Q: When is the next feature update?</strong><br />
-            A: We're already hard at work! Follow our social channels for
-            progress updates.
-          </li>
-          <li>
-            <strong>Q: How can I suggest a feature?</strong><br />
-            A: Shoot us an email with the subject line <em>Feature
-            Request</em> and we'll add it to our roadmap discussion.
-          </li>
-        </ul>
-      </section>
-
-      <!--  Privacy Policy  -->
-      <section id="privacy-policy">
-        <h2>Privacy Policy</h2>
-        <p>Last updated: April 21, 2025</p>
-        <p>
-          Whoscored ("the App") is published by Knolden Ventures ("we", "our",
-          "us"). Your privacy is important to us. This policy explains what
-          data we collect, how we use it, and your rights.
-        </p>
-
-        <h3 style="margin-top:1.25rem;font-size:1.25rem;font-weight:600;color:var(--gradient-mid);">1.&nbsp;Data We Do <strong>Not</strong> Collect</h3>
-        <ul>
-          <li>No personal information such as name, address, or phone number.</li>
-          <li>No location data.</li>
-          <li>No contacts or photos.</li>
-        </ul>
-
-        <h3 style="margin-top:1.25rem;font-size:1.25rem;font-weight:600;color:var(--gradient-mid);">2.&nbsp;Data We Collect</h3>
-        <p>
-          The App only collects anonymous, aggregated usage statistics (e.g.,
-          screen views, crash reports) through Apple‑provided services to help us
-          improve stability and performance.
-        </p>
-
-        <h3 style="margin-top:1.25rem;font-size:1.25rem;font-weight:600;color:var(--gradient-mid);">3.&nbsp;How We Use Data</h3>
-        <p>
-          Aggregated analytics help us understand which features are most
-          popular and where improvements are needed. We do not use collected
-          data for advertising or share it with third‑parties.
-        </p>
-
-        <h3 style="margin-top:1.25rem;font-size:1.25rem;font-weight:600;color:var(--gradient-mid);">4.&nbsp;Support Communications</h3>
-        <p>
-          If you email
-          <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a>,
-          the message will include your email address and any information you
-          voluntarily provide. We use this solely to address your enquiry and
-          improve customer support.
-        </p>
-
-        <h3 style="margin-top:1.25rem;font-size:1.25rem;font-weight:600;color:var(--gradient-mid);">5.&nbsp;Data Retention</h3>
-        <p>
-          Usage statistics are retained in aggregate form for up to 24 months.
-          Support emails are retained for as long as necessary to resolve your
-          request.
-        </p>
-
-        <h3 style="margin-top:1.25rem;font-size:1.25rem;font-weight:600;color:var(--gradient-mid);">6.&nbsp;Your Rights</h3>
-        <p>
-          You may request deletion of any support emails you have sent by
-          contacting us at the address above.
-        </p>
-
-        <h3 style="margin-top:1.25rem;font-size:1.25rem;font-weight:600;color:var(--gradient-mid);">7.&nbsp;Changes to This Policy</h3>
-        <p>
-          We may update this policy. Significant changes will be noted on this
-          page and, where appropriate, in‑app.
-        </p>
-
-        <p>
-          For questions about privacy, please email
-          <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a>.
-        </p>
-      </section>
-    </main>
-
-    <footer>
-      &copy; <span id="year"></span> Whoscored. All rights reserved.
-    </footer>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+    // Active nav link
+    const linkMap={contact:'#contact',faq:'#faq',privacy:'#privacy'};
+    const navLinks=document.querySelectorAll('.nav-links a[href^="#"]');
+    const sections=[...navLinks].map(l=>document.querySelector(l.getAttribute('href')));
+    const navObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href').slice(1)===e.target.id));}}),{threshold:.5});
+    sections.forEach(s=>navObserver.observe(s));
+  </script>
+</body>
 </html>
