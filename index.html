@@ -4,12 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Whoscored – Support</title>
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-HL6KJRxvRX4geGCEuT7WBvUuU25NsyZ41Texe+RsHV8A+DJvQb6DZLG2fXU+1F0DFA+gk6w3G5bE1b0GI6pWlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -22,6 +20,9 @@
     a:hover::after{transform:scaleX(1);transform-origin:left}
     h1,h2,h3,h4{font-weight:700;line-height:1.2;color:var(--c-heading)}
     img{max-width:100%;height:auto;display:block}
+    ul, ol {list-style-position: inside; margin-left: 1rem;} /* Added for lists in terms/privacy */
+    li { margin-bottom: 0.5rem; } /* Added for list items spacing */
+
 
     /* ─────────── THEME VARIABLES ─────────── */
     :root{
@@ -67,6 +68,9 @@
     section::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(135deg,transparent 0%,var(--c-accent) 50%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
     section h2{font-size:1.65rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.8px;display:flex;align-items:center;gap:.5rem}
     section h2 i{font-size:1.25rem;color:var(--c-accent)}
+    section h3{margin-top:1.35rem; margin-bottom: 0.5rem; font-size: 1.1rem;} /* Added styling for h3 within sections */
+    section p {margin-bottom: 0.75rem;} /* Added general paragraph margin */
+
 
     /* ─────────── FAQ ACCORDION ─────────── */
     .accordion-item+ .accordion-item{margin-top:1rem}
@@ -87,18 +91,16 @@
   </style>
 </head>
 <body>
-  <!-- ─────────── NAV ─────────── -->
   <nav>
     <a href="#top" class="logo" aria-label="Whoscored home" style="font-weight:700;font-size:1.15rem">Whoscored</a>
     <div class="nav-links">
       <a href="#contact">Contact</a>
       <a href="#faq">FAQ</a>
       <a href="#privacy">Privacy</a>
-      <button id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-circle-half-stroke"></i></button>
+      <a href="#terms">Terms</a> <button id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-circle-half-stroke"></i></button>
     </div>
   </nav>
 
-  <!-- ─────────── HERO ─────────── -->
   <header id="top">
     <div class="stars"></div>
     <h1 data-sr>Need a hand?</h1>
@@ -107,9 +109,7 @@
     <div class="wave"></div>
   </header>
 
-  <!-- ─────────── MAIN ─────────── -->
   <main>
-    <!-- CONTACT -->
     <section id="contact" data-sr>
       <h2><i class="fa-solid fa-envelope"></i> Contact Us</h2>
       <p>We're here for you! Email us at <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a> or use the form below.</p>
@@ -120,7 +120,6 @@
       </form>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" data-sr>
       <h2><i class="fa-solid fa-circle-question"></i> FAQ</h2>
       <div class="accordion-item" data-accordion>
@@ -133,65 +132,147 @@
       </div>
     </section>
 
-    <!-- PRIVACY POLICY -->
     <section id="privacy" data-sr>
       <h2><i class="fa-solid fa-user-shield"></i> Privacy Policy</h2>
       <p style="font-weight:600;margin-bottom:.5rem">Last updated: April 21, 2025</p>
       <p>Whoscored ("the App") is published by Knolden Ventures ("we", "our", "us"). Your privacy is important to us. This policy explains what data we collect, how we use it, and your rights.</p>
-      <h3 style="margin-top:1.35rem">1. Data We Do <strong>Not</strong> Collect</h3>
-      <ul style="margin-left:1.25rem;margin-top:.5rem">
+      <h3>1. Data We Do <strong>Not</strong> Collect</h3>
+      <ul style="margin-top:.5rem">
         <li>No personal information such as name, address, or phone number.</li>
         <li>No location data.</li>
         <li>No contacts or photos.</li>
       </ul>
-      <h3 style="margin-top:1.35rem">2. Data We Collect</h3>
+      <h3>2. Data We Collect</h3>
       <p>The App only collects anonymous, aggregated usage statistics (e.g., screen views, crash reports) through Apple‑provided services to help us improve stability and performance.</p>
-      <h3 style="margin-top:1.35rem">3. How We Use Data</h3>
+      <h3>3. How We Use Data</h3>
       <p>Aggregated analytics help us understand which features are most popular and where improvements are needed. We do not use collected data for advertising or share it with third‑parties.</p>
-      <h3 style="margin-top:1.35rem">4. Support Communications</h3>
+      <h3>4. Support Communications</h3>
       <p>If you email <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a>, the message will include your email address and any information you voluntarily provide. We use this solely to address your enquiry and improve customer support.</p>
-      <h3 style="margin-top:1.35rem">5. Data Retention</h3>
+      <h3>5. Data Retention</h3>
       <p>Usage statistics are retained in aggregate form for up to 24 months. Support emails are retained for as long as necessary to resolve your request.</p>
-      <h3 style="margin-top:1.35rem">6. Your Rights</h3>
+      <h3>6. Your Rights</h3>
       <p>You may request deletion of any support emails you have sent by contacting us at the address above.</p>
-      <h3 style="margin-top:1.35rem">7. Changes to This Policy</h3>
+      <h3>7. Changes to This Policy</h3>
       <p>We may update this policy. Significant changes will be noted on this page and, where appropriate, in‑app.</p>
       <p style="margin-top:1rem">For questions about privacy, please email <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a>.</p>
     </section>
+
+    <section id="terms" data-sr>
+      <h2><i class="fa-solid fa-file-contract"></i> Terms of Use</h2>
+      <p style="font-weight:600;margin-bottom:.5rem">Last updated: <span id="termsDate"></span></p>
+      <p>Welcome to Whoscored ("the App"), provided by Knolden Ventures ("we", "our", "us"). These Terms of Use ("Terms") govern your access to and use of the App and any related services. By downloading, accessing, or using the App, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the App.</p>
+
+      <h3>1. Subscriptions</h3>
+      <p>The App offers premium features through monthly and annual subscription plans ("Subscription").</p>
+      <ul>
+        <li><strong>Billing:</strong> Subscriptions are billed on a recurring basis (monthly or annually) through Apple's App Store. You must provide a valid payment method. By initiating a Subscription, you authorize Apple to charge you the subscription fee.</li>
+        <li><strong>Renewal:</strong> Your Subscription will automatically renew at the end of each billing cycle unless you cancel it at least 24 hours before the end of the current period.</li>
+        <li><strong>Cancellation:</strong> You can manage and cancel your Subscriptions through your App Store account settings. If you cancel your Subscription, you will continue to have access to the premium features until the end of your current billing period.</li>
+        <li><strong>Price Changes:</strong> We reserve the right to modify subscription fees. Any price changes will be communicated to you in advance, and, if applicable, how to accept those changes. Price changes will take effect at the start of the next subscription period following the date of the price change.</li>
+        <li><strong>Refunds:</strong> Except when required by law or as otherwise stated by Apple's App Store policies, paid Subscription fees are non-refundable.</li>
+      </ul>
+
+      <h3>2. Use of the App</h3>
+      <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for your personal, non-commercial purposes, subject to these Terms.</p>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the App for any illegal purpose or in violation of any local, state, national, or international law.</li>
+        <li>Reverse engineer, decompile, disassemble, or otherwise attempt to discover the source code of the App.</li>
+        <li>Modify, adapt, translate, or create derivative works based upon the App.</li>
+        <li>Rent, lease, loan, resell, sublicense, distribute, or otherwise transfer the App to any third party.</li>
+        <li>Interfere with or disrupt the operation of the App or the servers or networks used to make the App available.</li>
+      </ul>
+
+      <h3>3. Intellectual Property</h3>
+      <p>The App, including its design, graphics, user interface, features, and all underlying software and content, is the property of Knolden Ventures or its licensors and is protected by copyright, trademark, and other intellectual property laws. All rights not expressly granted to you in these Terms are reserved by Knolden Ventures.</p>
+
+      <h3>4. Termination</h3>
+      <p>We may terminate or suspend your access to the App immediately, without prior notice or liability, for any reason whatsoever, including, without limitation, if you breach these Terms.</p>
+      <p>Upon termination, your right to use the App will immediately cease. If you wish to terminate your account, you may simply discontinue using the App and cancel any active Subscriptions through the App Store.</p>
+
+      <h3>5. Disclaimers</h3>
+      <p>THE APP IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE APP WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT THE APP IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.</p>
+
+      <h3>6. Limitation of Liability</h3>
+      <p>IN NO EVENT SHALL KNOLDEN VENTURES, NOR ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES, BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (I) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE APP; (II) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE APP; (III) ANY CONTENT OBTAINED FROM THE APP; AND (IV) UNAUTHORIZED ACCESS, USE, OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY, WHETHER OR NOT WE HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE, AND EVEN IF A REMEDY SET FORTH HEREIN IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE. OUR MAXIMUM AGGREGATE LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THE APP OR THESE TERMS SHALL NOT EXCEED THE AMOUNT YOU PAID TO US FOR THE SUBSCRIPTION IN THE PRECEDING TWELVE (12) MONTHS, OR, IF NO FEES WERE PAID, TEN DOLLARS ($10.00 USD).</p>
+
+      <h3>7. Governing Law</h3>
+      <p>These Terms shall be governed and construed in accordance with the laws of [Your Country/State - e.g., California, USA], without regard to its conflict of law provisions. You should replace "[Your Country/State]" with the actual jurisdiction.</p>
+
+      <h3>8. Changes to Terms</h3>
+      <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion. We will notify you of any changes by posting the new Terms on this page and may also notify you through the App.</p>
+      <p>By continuing to access or use our App after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the App.</p>
+
+      <h3>9. Contact Us</h3>
+      <p>If you have any questions about these Terms, please contact us at <a href="mailto:knoldenventures@gmail.com">knoldenventures@gmail.com</a>.</p>
+    </section>
+
   </main>
 
-  <!-- ─────────── FOOTER ─────────── -->
   <footer>
     © <span id="year"></span> Whoscored. All rights reserved.
   </footer>
 
-  <!-- ─────────── SCRIPTS ─────────── -->
   <script>
     // Dynamic year
-    document.getElementById('year').textContent=new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Dynamic date for Terms of Use
+    const termsDateElement = document.getElementById('termsDate');
+    if (termsDateElement) {
+      const currentDate = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      termsDateElement.textContent = currentDate.toLocaleDateString('en-US', options);
+    }
 
     // Theme toggle
-    const root=document.documentElement;const btn=document.getElementById('themeToggle');
-    function applyTheme(dark){root.classList.toggle('dark',dark);localStorage.setItem('theme',dark?'dark':'light');}
-    const stored=localStorage.getItem('theme');applyTheme(stored?stored==='dark':matchMedia('(prefers-color-scheme: dark)').matches);
-    btn.addEventListener('click',()=>applyTheme(!root.classList.contains('dark')));
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    function applyTheme(dark) {
+      root.classList.toggle('dark', dark);
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    }
+    const stored = localStorage.getItem('theme');
+    applyTheme(stored ? stored === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches);
+    btn.addEventListener('click', () => applyTheme(!root.classList.contains('dark')));
 
     // Accordion
-    document.querySelectorAll('[data-accordion]').forEach(item=>{
-      const question=item.querySelector('.accordion-question');
-      question.addEventListener('click',()=>item.classList.toggle('active'));});
+    document.querySelectorAll('[data-accordion]').forEach(item => {
+      const question = item.querySelector('.accordion-question');
+      question.addEventListener('click', () => item.classList.toggle('active'));
+    });
 
     // Scroll reveal
-    const srEls=[...document.querySelectorAll('[data-sr]')];
-    const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.2});
-    srEls.forEach(el=>observer.observe(el));
+    const srEls = [...document.querySelectorAll('[data-sr]')];
+    const observer = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    }), { threshold: .2 });
+    srEls.forEach(el => observer.observe(el));
 
     // Active nav link
-    const linkMap={contact:'#contact',faq:'#faq',privacy:'#privacy'};
-    const navLinks=document.querySelectorAll('.nav-links a[href^="#"]');
-    const sections=[...navLinks].map(l=>document.querySelector(l.getAttribute('href')));
-    const navObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href').slice(1)===e.target.id));}}),{threshold:.5});
-    sections.forEach(s=>navObserver.observe(s));
+    const linkMap = { contact: '#contact', faq: '#faq', privacy: '#privacy', terms: '#terms' }; // UPDATED linkMap
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const sections = [...navLinks].map(l => {
+        const href = l.getAttribute('href');
+        // Ensure the selector is valid, especially if it's just "#" or an empty href
+        if (href && href.length > 1) {
+            return document.querySelector(href);
+        }
+        return null;
+    }).filter(s => s !== null); // Filter out any nulls if querySelector fails
+
+    if (sections.length > 0) {
+        const navObserver = new IntersectionObserver(entries => entries.forEach(e => {
+            if (e.isIntersecting) {
+                navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href').slice(1) === e.target.id));
+            }
+        }), { threshold: .5 });
+        sections.forEach(s => navObserver.observe(s));
+    }
+
   </script>
 </body>
 </html>
